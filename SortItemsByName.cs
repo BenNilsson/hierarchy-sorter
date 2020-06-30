@@ -18,6 +18,6 @@ public class SortItemsByName : EditorWindow
                 sortedObjects[i].transform.SetSiblingIndex(initialIndex + i);
             }
         }
-        else Debug.Log("No objects selected to sort");
+        else Debug.LogError("[A-Z Sort Error]: No objects selected in Hierarchy Window to sort");
     }
 }

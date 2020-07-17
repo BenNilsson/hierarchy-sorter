@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class SortItemsByName : EditorWindow
 {
+    [MenuItem("GameObject/A-Z Sort &s", true)]
+    static bool CheckIfMainMethodIsValid()
+    {
+        return Selection.gameObjects.Length > 1;
+    }
+
     [MenuItem("GameObject/A-Z Sort &s")]
     public static void SortObjects()
     {
@@ -18,6 +24,5 @@ public class SortItemsByName : EditorWindow
                 sortedObjects[i].transform.SetSiblingIndex(initialIndex + i);
             }
         }
-        else Debug.Log("No objects selected to sort");
     }
 }
